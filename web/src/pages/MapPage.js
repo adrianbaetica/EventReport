@@ -5,12 +5,12 @@ import Map from "../components/Map.jsx";
 
 import './MapPage.css';
 
-const MapPage = () => {
+const MapPage = ({events}) => {
   return (
     <div className='map-page'>
       <h1>Event Report App</h1>
       <Link to="/event/new">REPORT AN EVENT</Link>
-      <Map/>
+      <Map events={events}/>
     </div>
   );
 };

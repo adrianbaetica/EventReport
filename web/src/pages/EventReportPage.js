@@ -1,6 +1,6 @@
 import React from "react";
 
-const EventReport = () => {
+const EventReportPage = () => {
   return (
     <div className="report-page">
       <h2> Report an event here: </h2>
@@ -8,4 +8,4 @@ const EventReport = () => {
   );
 };
 
-export default EventReport;
+export default EventReportPage;

@@ -3,7 +3,7 @@ import ReactMapGL, {Marker} from "react-map-gl";
 
 import CustomButton from './CustomButton.jsx'
 
-const Map = () => {
+const Map = ({events}) => {
   const [viewport, setViewport] = useState({
     latitude: 44.439663,
     longitude: 26.096306,
@@ -12,6 +12,14 @@ const Map = () => {
     zoom: 13
   });
 
+  const eventMarkers = events.map(event => {
+    return ( 
+      <Marker key = {event.id} latitude={event.lat} longitude={event.long}> 
+          <CustomButton event={event}/>
+      </Marker>
+    );
+  });
+    
   return (
     <div>
       <ReactMapGL 
@@ -21,9 +29,7 @@ const Map = () => {
           setViewport(viewport);
         }} 
       >
-       <Marker key = {1} latitude={44.439663} longitude={26.096306}> 
-        <CustomButton />
-       </Marker>
+        {eventMarkers}
       </ReactMapGL>
     </div>
   );
